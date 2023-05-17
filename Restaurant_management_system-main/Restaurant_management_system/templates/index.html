@@ -1,0 +1,456 @@
+{% load static %}
+<html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JD FOOD</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800;900&display=swap");
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bitter';
+    font-weight: 700;
+    color: white;
+    background-color: #1d1d23
+}
+
+header {
+    background-image: url("{% static 'shop/assets/img/header-background.jpg' %}");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+}
+
+header nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2vw
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    font-size: 10px;
+    gap: 50px;
+}
+header nav ul li {
+     list-style: none;
+}
+header nav ul li a{
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px;
+    transition: 0.5s ease;
+
+}
+header nav ul:hover li a{
+    color: #06ecf4;
+}
+header nav ul:hover li a:not(:hover){
+    color:white;
+    opacity: 0.3;
+    filter: blur(1px);
+}
+header nav li {
+    list-style: none
+}
+
+header nav .middle {
+    margin: 0 auto
+}
+
+header nav .middle img {
+    width: 5vw
+}
+
+header .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 80vh
+}
+
+header .hero img {
+    margin: 0 auto;
+    width: 40vw
+}
+
+header .hero h1 {
+    color: #e58f00;
+    font-size: 4vw;
+    margin: 0
+}
+
+header .hero p {
+    font-size: 1.5vw;
+    width: 40vw;
+    margin: 10px 0
+}
+
+header .hero a {
+    background-color: #e58f00;
+    padding: 20px 35px;
+    margin-top: 20px;
+    display: inline-block;
+    color: #28282d;
+    text-decoration: none;
+    font-size: 1.5vw;
+    border-radius: 5px
+}
+
+.main .sezione-uno {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 5vw 0
+}
+
+.main .sezione-uno .contenuto {
+    width: 40vw
+}
+
+.main .sezione-uno h3 {
+    font-size: 2.2vw
+}
+
+.main .sezione-uno p {
+    font-size: 2vw
+}
+
+.main .sezione-uno img {
+    margin: 0 auto;
+    width: 40vw
+}
+
+.main .sezione-due {
+    background-image: url("{% static 'shop/assets/img/Shape.svg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center
+}
+
+.main .sezione-due-img-due {
+    justify-self: left;
+    width: 36vw;
+    margin-top: 23vw
+}
+
+.main .sezione-due-img-uno {
+    width: 25vw;
+    position: relative;
+    float: right;
+    justify-self: right
+}
+
+.main .sezione-due-img-tre {
+    justify-self: right;
+    width: 58vw;
+    padding-bottom: 20px
+}
+
+.main .sezione-due .contenuto {
+    padding-left: 7vw;
+    align-self: end
+}
+
+.main .sezione-due .contenuto h3 {
+    font-size: 2.2vw
+}
+
+.main .sezione-due .contenuto p {
+    font-size: 2vw
+}
+
+.main .sezione-tre {
+    padding: 4vw 10vw
+}
+
+.main .sezione-tre h3 {
+    text-align: center;
+    font-size: 2.2vw
+}
+
+.main .sezione-tre .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    grid-row-gap: 1.5vw
+}
+
+.main .sezione-tre .gallery img {
+    width: 25vw
+}
+
+.main .sezione-quattro {
+    background-image: url("{% static 'shop/assets/img/background-sezione-quattro.png' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    position: relative
+}
+
+.main .sezione-quattro .contenuto {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1d1d23;
+    padding: 50px;
+    text-align: center;
+    border: solid #e58f00 10px;
+    width: 30vw
+}
+
+.main .sezione-quattro .contenuto h3 {
+    font-size: 2.2vw
+}
+
+.main .sezione-quattro .contenuto p {
+    font-size: 2vw
+}
+
+.main .sezione-cinque h3 {
+    font-size: 2.2vw;
+    text-align: center
+}
+
+.main .sezione-cinque .contenuto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 7vw 7vw 2vw 7vw;
+    column-gap: 2vw
+}
+
+.main .sezione-cinque .contenuto h4 {
+    color: #e58f00;
+    font-size: 1.8vw;
+    margin-bottom: 0
+}
+
+.main .sezione-cinque .contenuto .descrizione {
+    font-size: 1vw;
+    min-height: 7vw
+}
+
+.main .sezione-cinque .contenuto .price {
+    color: #e58f00;
+    font-size: 1.4vw
+}
+
+.main .sezione-cinque img {
+    width: 100%;
+    height: 60%
+}
+
+.main .sezione-sei {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    background-image: url("{% static 'shop/assets/img/Rectangle.svg' %}");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center
+}
+
+.main .sezione-sei .contenuto {
+    padding: 5vw
+}
+
+.main .sezione-sei p {
+    font-size: 2vw
+}
+
+.main .sezione-sei h3 {
+    font-size: 2.2vw
+}
+
+.main .sezione-sei img {
+    width: 100%
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center
+}
+
+footer img {
+    width: 20vw
+}
+
+footer ul {
+    display: flex;
+    width: 50vw;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    text-transform: uppercase;
+    color: #e7e6e6;
+    font-size: 1vw
+}
+
+footer .social {
+    display: flex;
+    justify-content: space-around;
+    width: 15vw
+}
+
+footer .social .facebook::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 2.5vw;
+    height: 2.5vw;
+    background: url({% static 'shop/assets/img/facebook.png' %});
+    background-size: cover
+}
+
+footer .social .twitter::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 2.5vw;
+    height: 2.5vw;
+    background: url({% static 'shop/assets/img/twitter.png' %});
+    background-size: cover
+}
+
+footer .social .instagram::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 2.5vw;
+    height: 2.5vw;
+    background: url({% static 'shop/assets/img/instagram.png' %});
+    background-size: cover
+}
+
+    </style>
+    </head>
+    <body>  
+        <header>
+            <nav>
+                <div class="left">
+                    <ul>
+                        <li><a href="/shop">Home</a></li>       
+                        <li><a href="/shop/about">About</a></li>       
+                        <li><a href="/shop/contact">Contact</a></li>       
+                        <li><a href="/admin">Admin</a></li>       
+                    </ul>
+                </div>
+                <div class="middle"><img src="{% static 'shop/assets/img/logo.png' %}" alt=""></div>
+            </nav>
+            <div class="hero">
+               <img src="{% static 'shop/assets/img/plate-header.png' %}" alt="">
+                <div class="cta">
+                    <h1>Contact Us For<br>
+                        Best Food
+                    </h1>
+                    <p>Sharing a food journey of a foodie who loves to cook food, travel and also passionate on food blogging. The JD Food is one of the famous food cart in Gujrat. You will get there all kind of fresh foods in reasonable price. Welcome To The JD Food.</p>
+                    <a href="/shop">Let's visit the Menu</a>
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="sezione-uno">
+               <img src="{% static 'shop/assets/img/img-sezione-uno.jpg' %}" alt="">
+                <div class="contenuto">
+                    <h3>About Us</h3>
+                    <p>Sharing a food journey of a foodie who loves to cook food, travel and also passionate on food blogging. The JD Food is one of the famous food cart in Gujrat. You will get there all kind of fresh foods in reasonable price. Welcome To The JD Food.
+
+                    </p>
+                </div>
+            </div>
+            <div class="sezione-due">                
+                <div class="contenuto">
+                    <h3>Food Quality</h3>
+                    <p>Food quality refers to the characteristics and attributes of food that determine its safety, nutritional value, taste, and overall suitability for consumption. It encompasses factors such as freshness, purity, nutrient content, absence of contaminants, and adherence to food safety standards.</p>
+                </div>
+                <img class="sezione-due-img-uno" src="{% static 'shop/assets/img/img-plate-sezione-due.png' %}">
+                <img class="sezione-due-img-due" src="{% static 'shop/assets/img/img-plate3-sezione-due.png' %}">
+                <img class="sezione-due-img-tre" src="{% static 'shop/assets/img/img-plate2-sezione-due.png' %}">
+            </div>
+            <div class="sezione-tre">
+                <h3>Our Food Gallery</h3>
+                <div class="gallery">
+                   <img src="{% static 'shop/assets/img/1.png' %}" alt="">
+                   <img src="{% static 'shop/assets/img/2.png' %}" alt="">
+                   <img src="{% static 'shop/assets/img/3.png' %}" alt="">
+                   <img src="{% static 'shop/assets/img/4.png' %}" alt="">
+                   <img src="{% static 'shop/assets/img/5.png' %}" alt="">
+                   <img src="{% static 'shop/assets/img/6.png' %}" alt="">
+                </div>
+            </div>
+            <div class="sezione-quattro">
+                <div class="contenuto">
+                    <h3>Enjoy Our Food</h3>
+                    <p>Top-rated dietary meals for optimal health and weight management, carefully crafted with balanced nutrition to support your well-being and help you reach your fitness goals.</p>
+                </div>
+            </div>
+            <div class="sezione-cinque">                
+                <h3>Our Menu</h3>
+                <div class="contenuto">
+                    <div>
+                       <img src="{% static 'shop/assets/img/Farfalle.jpg' %}" alt="">
+                        <h4>
+                            FARFALLE
+                        </h4>
+                        <p class="descrizione">Farfalle are a type of pasta commonly known as bow-tie pasta or butterfly pasta. The name is derived from the Italian word farfalle.</p>
+                        <p class="price">Price: 180Rs.</p>
+                    </div>
+                    <div>
+                       <img src="{% static 'shop/assets/img/Dhokla.jpg' %}" alt="">
+                        <h4>
+                            DHOKLA
+                        </h4>
+                        <p class="descrizione">A steamed snack made from fermented batter of rice and chickpea flour, topped with mustard seeds and curry leaves. Often served with chutney and fried green chilies.</p>
+                        <p class="price">Price: 90Rs.</p>
+                    </div>
+                    <div>
+                       <img src="{% static 'shop/assets/img/cannelloni.jpg' %}" alt="">
+                        <h4>
+                            CANNELLONI
+                        </h4>
+                        <p class="descrizione">Cannelloni are a cylindrical type of lasagna generally served baked with a filling and covered by a sauce in Italian cuisine. Popular stuffings include spinach and ricotta or minced beef.</p>
+                        <p class="price">Price: 250Rs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sezione-sei">
+               <img src="{% static 'shop/assets/img/img-plate1-sezione-sei.png' %}" alt="">
+                <div class="contenuto">
+                    <h3>Best Diet Meal</h3>
+                    <p>Top-rated dietary meals for optimal health and weight management, carefully crafted with balanced nutrition to support your well-being and help you reach your fitness goals.</p>
+                </div>
+            </div>
+        </div>
+         <footer>
+           <img src="{% static 'shop/assets/img/logo-footer.png' %}" alt="">
+            <div class="social" style="margin-top:20px">
+                <i class="facebook"></i>
+                <i class="twitter"></i>
+                <i class="instagram"></i>
+            </div>
+        </footer>
+    </body>
+</html>
